@@ -8,8 +8,8 @@ public class Member implements Info {
         if (nama == null || nama.trim().isEmpty()) {
             throw new InvalidMemberDataException("Nama tidak boleh kosong!");
         }
-        if (noHp == null || !noHp.matches("08\\d{8,11}")) {
-            throw new InvalidMemberDataException("No HP tidak valid!");
+        if (noHp == null || !noHp.matches("\\d+")) {
+            throw new InvalidMemberDataException("No HP hanya boleh berisi angka!");
         }
         if (email == null || !email.contains("@")) {
             throw new InvalidMemberDataException("Email tidak valid!");
